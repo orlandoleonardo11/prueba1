@@ -1,9 +1,3 @@
-/*
- * file_system.c
- *
- *  Created on: 4/4/2017
- *      Author: utnso
- */
 #include <stdio.h>
 #include "file_system.h"
 
