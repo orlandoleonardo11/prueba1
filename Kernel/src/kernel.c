@@ -36,27 +36,28 @@ struct addrinfo hints;
 			/*
 			 Cuando el cliente cierra la conexion, recv() devolvera 0.
 			 */
-			char * operando;
-			int packageSize = sizeof(operando);
-			char *package = malloc(packageSize);
-			char* cadena;
 
-			int status = 1;		// Estructura que manjea el status de los recieve.
+			char *buffer = malloc(100);
+			int tamanioBuffer = 100;
+
+
+			int status = 1;
 
 			printf("Cliente Conectado. ");
 
 			while (status != 0){
 				printf("Esperando valores...\n");
-				status = recv(socketCliente, (void*) package, packageSize, 0);
-				//deberia deserializar
-				cadena = operando;
-				if (status != 0) printf("%s", cadena);
+				status = recv(socketCliente, buffer, tamanioBuffer, 0);
+				//deberian deserializar acá
+				printf("recibi\n");
+				buffer[status] = '\0';
+				if (status != 0) printf("%s\n", buffer);
 
 			}
 
 			printf("Cliente Desconectado.\n");
 
-			free(package);
+			free(buffer);
 
 			close(socketCliente);
 			close(listenningSocket);

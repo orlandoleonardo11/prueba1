@@ -18,7 +18,7 @@
 #include <stdint.h>
 
 
-#define PUERTO "5003"
+#define PUERTO "5001"
 #define BACKLOG 5			// Define cuantas conexiones vamos a mantener pendientes al mismo tiempo
 
 /*

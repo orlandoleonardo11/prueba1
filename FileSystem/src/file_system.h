@@ -18,7 +18,7 @@
 #include <stdint.h>
 
 #define IP "127.0.0.1"
-#define PUERTO "5003"
+#define PUERTO "5001"
 
 /*
  * 	Definicion de estructuras
@@ -27,8 +27,8 @@
  * 	de bytes del paquete.
  */
 typedef struct _t_Package {
-	uint32_t Operando1;
-	uint32_t Operando2;
+	uint32_t tamanio_mensaje;
+	char* mensaje;
 } t_Package;
 
 /*
